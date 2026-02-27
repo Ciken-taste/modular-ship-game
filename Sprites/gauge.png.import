@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1n1gxrmnvew"
-path="res://.godot/imported/generator.png-32392d651efc22256624d31d36dcf540.ctex"
+uid="uid://d3eafgnk02c4c"
+path="res://.godot/imported/gauge.png-2e47dc057564cc0f367e4cca1030a471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/generator.png"
-dest_files=["res://.godot/imported/generator.png-32392d651efc22256624d31d36dcf540.ctex"]
+source_file="res://Sprites/gauge.png"
+dest_files=["res://.godot/imported/gauge.png-2e47dc057564cc0f367e4cca1030a471.ctex"]
 
 [params]
 

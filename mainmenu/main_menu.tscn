@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://5atq6m51yiw2"]
+
+[ext_resource type="Script" uid="uid://bb7pi5edw8w7g" path="res://mainmenu/main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=124292636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+metadata/_edit_use_anchors_ = true
+
+[node name="New" type="Button" parent="." unique_id=1314634044]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 87.0
+offset_right = 502.0
+offset_bottom = 153.0
+text = "New Game"
+
+[node name="Load" type="Button" parent="." unique_id=1684721182]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 212.0
+offset_right = 499.0
+offset_bottom = 278.0
+text = "Load Game"
+
+[node name="Shipbuilder" type="Button" parent="." unique_id=2079753828]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 344.0
+offset_right = 499.0
+offset_bottom = 410.0
+text = "Shipbuilder"
+
+[node name="Quit" type="Button" parent="." unique_id=1138803945]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 482.0
+offset_right = 495.0
+offset_bottom = 548.0
+text = "Quit"
+
+[node name="ChooseShip" type="Control" parent="." unique_id=676004801]
+layout_mode = 1
+anchor_left = -0.4782986
+anchor_top = 0.0077160494
+anchor_right = -0.13975695
+anchor_bottom = 0.35493827
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ChooseShip" unique_id=230537320]
+layout_mode = 0
+offset_right = 388.0
+offset_bottom = 226.0
+color = Color(0.16745102, 0.16745102, 0.16745102, 0.69411767)
+
+[node name="CloseNew" type="Button" parent="ChooseShip" unique_id=1044026432]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 176.0
+offset_right = 90.0
+offset_bottom = 207.0
+text = "Cancel"
+
+[node name="OptionButton" type="OptionButton" parent="ChooseShip" unique_id=1360361617]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 69.0
+offset_right = 308.0
+offset_bottom = 110.0
+
+[node name="Start" type="Button" parent="ChooseShip" unique_id=540310035]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 177.0
+offset_right = 351.0
+offset_bottom = 208.0
+text = "Start"
+
+[node name="Label" type="Label" parent="ChooseShip" unique_id=2025252565]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 35.0
+offset_right = 256.0
+offset_bottom = 58.0
+text = "Select your ship"
+
+[connection signal="pressed" from="New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Shipbuilder" to="." method="_on_shipbuilder_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ChooseShip/CloseNew" to="." method="_on_close_new_pressed"]
+[connection signal="pressed" from="ChooseShip/Start" to="." method="_on_start_pressed"]

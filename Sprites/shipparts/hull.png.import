@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpoabsv714053"
-path="res://.godot/imported/fueltank.png-d85f0198035bc7199f70ae1a3fcaefa7.ctex"
+uid="uid://dgwk34bhmqeov"
+path="res://.godot/imported/hull.png-bab2c2c92a49f57cb7f3e9fc950a72b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fueltank.png"
-dest_files=["res://.godot/imported/fueltank.png-d85f0198035bc7199f70ae1a3fcaefa7.ctex"]
+source_file="res://Sprites/shipparts/hull.png"
+dest_files=["res://.godot/imported/hull.png-bab2c2c92a49f57cb7f3e9fc950a72b9.ctex"]
 
 [params]
 

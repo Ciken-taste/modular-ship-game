@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgwk34bhmqeov"
-path="res://.godot/imported/hull.png-9b61e37631c5bc232cbb90f9eb3043d7.ctex"
+uid="uid://bwf4otaitkgli"
+path="res://.godot/imported/thruster.png-dd2d76938cfa78428997df7ff17d0152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/hull.png"
-dest_files=["res://.godot/imported/hull.png-9b61e37631c5bc232cbb90f9eb3043d7.ctex"]
+source_file="res://Sprites/shipparts/thruster.png"
+dest_files=["res://.godot/imported/thruster.png-dd2d76938cfa78428997df7ff17d0152.ctex"]
 
 [params]
 

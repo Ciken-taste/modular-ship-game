@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bffabhh6mrnn"]
+[gd_scene format=3 uid="uid://bffabhh6mrnn"]
 
-[ext_resource type="Script" uid="uid://djjerqyik0kb2" path="res://shipbuilder_placed_node.gd" id="1_a4j4v"]
+[ext_resource type="Script" uid="uid://djjerqyik0kb2" path="res://shipbuilder/shipbuilder_placed_node.gd" id="1_a4j4v"]
 
 [node name="ShipbuilderPlacedNode" type="Node2D"]
 scale = Vector2(0.5, 0.5)

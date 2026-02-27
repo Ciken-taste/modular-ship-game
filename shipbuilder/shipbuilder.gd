@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var pdemand_label := ($Camera2D/PowerDemand as Label)
 @onready var pgeneration_label := ($Camera2D/PowerGeneration as Label)
 @onready var acceleration_label := ($Camera2D/MaxAcceleration as Label)
 @onready var dv_label := ($Camera2D/Range as Label)
@@ -8,6 +7,8 @@ extends Node2D
 @onready var fuel_consumption_label := ($Camera2D/FuelConsumption as Label)
 
 @onready var save_button := ($Camera2D/SaveButton as Button)
+@onready var ship_name_input := ($Camera2D/SaveButton/Savemenu/LineEdit as LineEdit)
+
 
 @export var new_block_coords : Vector2 = Vector2.ZERO
 @export var remove_block_coords : Vector2 = Vector2.ZERO
@@ -33,6 +34,9 @@ var dv : float = 0
 var fuel_capacity : float = 0
 var fuel_consumption : float = 0
 
+var cargo_size : int = 0
+
+
 
 func _ready() -> void:
 	var x : int = 0
@@ -49,13 +53,12 @@ func _ready() -> void:
 	ship[ship_size/2][ship_size/2] = "cockpit"
 
 func save_ship():
-	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_file = FileAccess.open("user://ships/" + ship_name_input.text + ".save", FileAccess.WRITE)
 	var json_string = JSON.stringify({"ship": ship})
 	save_file.store_line(json_string)
 
 func update_labels() -> void:
-	pdemand_label.text = "POWER DEMAND: " +  str(power_demand) + " MW"
-	pgeneration_label.text = "POWER GENERATION: " + str(power_generation) + " MW"
+	pgeneration_label.text = "POWER GENERATION: " + str(power_generation) + "MW/" + str(power_demand) + "MW"
 	acceleration_label.text = "MAX ACCELERATION: " + str(roundf(max_acceleration)) + " M/S^2"
 	dv_label.text = "DV: " + str(roundf(dv)) + " M/S"
 	fuel_capacity_label.text = "FUEL CAPACITY: " + str(fuel_capacity) + " L"
@@ -73,8 +76,8 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	if new_block_coords != Vector2.ZERO:
 		ship[new_block_coords.x][new_block_coords.y] = selected_block
-		var new_block = preload("res://shipbuilder_placed_node.tscn").instantiate()
-		new_block.texture_img = load("res://Sprites/"+ selected_block +".png")
+		var new_block = preload("res://shipbuilder/shipbuilder_placed_node.tscn").instantiate()
+		new_block.texture_img = load("res://Sprites/shipparts/"+ selected_block +".png")
 		new_block.position = new_block_coords * 50
 		new_block.pos = new_block_coords
 		add_child(new_block)
@@ -124,18 +127,18 @@ func get_ship_stats():
 	dv = max_acceleration * fuel_time
 	acceleration_label.self_modulate = Color(1, 1, 1)
 	fuel_capacity_label.self_modulate = Color(1, 1, 1)
-	pdemand_label.self_modulate = Color(1, 1, 1)
+	pgeneration_label.self_modulate = Color(1, 1, 1)
+	is_valid = true
 	if max_acceleration <= 0: 
 		is_valid = false
 		acceleration_label.self_modulate = Color(1, 0, 0)
-	elif fuel_capacity <= 0:
+	if fuel_capacity <= 0:
 		fuel_capacity_label.self_modulate = Color(1, 0, 0)
 		is_valid = false
-	elif power_demand > power_generation:
+	if power_demand > power_generation:
 		is_valid = false
-		pdemand_label.self_modulate = Color(1, 0, 0)
-	else:
-		is_valid = true
+		pgeneration_label.self_modulate = Color(1, 0, 0)
+	
 	if is_valid: save_button.disabled = false
 	else: save_button.disabled = true
 	update_labels()
@@ -158,14 +161,14 @@ func draw_ghost_blocks() -> void:
 				var a : int = -1
 				while a < 2:
 					if ship[x + a][y] == "0":
-						var ghost_block = preload("res://shipbuilder_node.tscn").instantiate()
-						ghost_block.texture_img = load("res://Sprites/" + selected_block + ".png")
+						var ghost_block = preload("res://shipbuilder/shipbuilder_node.tscn").instantiate()
+						ghost_block.texture_img = load("res://Sprites/shipparts/" + selected_block + ".png")
 						ghost_block.pos = Vector2(x + a, y)
 						ghost_block.position = Vector2(x + a, y) * 50
 						ghost_block_tab.add_child(ghost_block)
 					if ship[x][y + a] == "0":
-						var ghost_block = preload("res://shipbuilder_node.tscn").instantiate()
-						ghost_block.texture_img = load("res://Sprites/" + selected_block + ".png")
+						var ghost_block = preload("res://shipbuilder/shipbuilder_node.tscn").instantiate()
+						ghost_block.texture_img = load("res://Sprites/shipparts/" + selected_block + ".png")
 						ghost_block.pos = Vector2(x, y + a)
 						ghost_block.position = Vector2(x, y + a) * 50
 						ghost_block_tab.add_child(ghost_block)
@@ -200,5 +203,9 @@ func _on_fueltank_pressed() -> void:
 	draw_ghost_blocks()
 
 
-func _on_save_button_pressed() -> void:
+func _on_confirm_save_pressed() -> void:
 	save_ship()
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://mainmenu/main_menu.tscn")

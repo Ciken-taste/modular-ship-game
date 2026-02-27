@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://iqsnsdiw62wy"]
+[gd_scene format=3 uid="uid://iqsnsdiw62wy"]
 
-[ext_resource type="Script" uid="uid://bvexudk4ihr4o" path="res://shipbuilder_node.gd" id="1_c7q3d"]
-[ext_resource type="Texture2D" uid="uid://dgwk34bhmqeov" path="res://Sprites/hull.png" id="2_4fofv"]
+[ext_resource type="Script" uid="uid://bvexudk4ihr4o" path="res://shipbuilder/shipbuilder_node.gd" id="1_c7q3d"]
+[ext_resource type="Texture2D" uid="uid://dgwk34bhmqeov" path="res://Sprites/shipparts/hull.png" id="2_4fofv"]
 
 [node name="ShipbuilderNode" type="Node2D"]
 scale = Vector2(0.4, 0.4)
