@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bay6wuvf4cgsq"]
+
+[ext_resource type="Script" uid="uid://2nfg58sdmlie" path="res://radar_system.gd" id="1_y8x1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8x1c"]
+radius = 29.068884
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vshru"]
+radius = 608.7627
+
+[node name="RadarTestScene" type="Node2D" unique_id=1853523109]
+
+[node name="RadarSystem" type="Node2D" parent="." unique_id=792900306]
+script = ExtResource("1_y8x1c")
+
+[node name="RadarDish" type="Node2D" parent="RadarSystem" unique_id=18469059]
+position = Vector2(841, 179)
+
+[node name="ColorRect" type="ColorRect" parent="RadarSystem/RadarDish" unique_id=1924956118]
+offset_left = -105.0
+offset_top = -19.0
+offset_right = 104.0
+offset_bottom = 21.0
+
+[node name="RayCast2D" type="RayCast2D" parent="RadarSystem/RadarDish" unique_id=1431376436]
+target_position = Vector2(0, -10000)
+collision_mask = 2
+
+[node name="Display" type="Node2D" parent="RadarSystem" unique_id=149386947]
+position = Vector2(158, 493)
+
+[node name="ColorRect" type="ColorRect" parent="RadarSystem/Display" unique_id=774921364]
+offset_left = -135.0
+offset_top = -130.0
+offset_right = 237.0
+offset_bottom = 127.0
+color = Color(0.23211989, 0.23211983, 0.23211983, 1)
+
+[node name="Button" type="Button" parent="RadarSystem/Display" unique_id=600690718]
+offset_left = 157.0
+offset_top = -120.0
+offset_right = 223.0
+offset_bottom = -81.0
+text = "SECTOR"
+
+[node name="Scroll" type="Area2D" parent="RadarSystem/Display" unique_id=135096397]
+position = Vector2(190, -44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarSystem/Display/Scroll" unique_id=538496954]
+shape = SubResource("CircleShape2D_y8x1c")
+
+[node name="ColorRect" type="ColorRect" parent="RadarSystem/Display/Scroll" unique_id=283390638]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Sector" type="Node2D" parent="RadarSystem/Display" unique_id=1122745560]
+
+[node name="ColorRect" type="ColorRect" parent="RadarSystem/Display/Sector" unique_id=2135792397]
+offset_left = -1.0
+offset_top = -114.0
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="ColorRect2" type="ColorRect" parent="RadarSystem/Display/Sector" unique_id=507000462]
+offset_top = -1.0
+offset_right = 115.0
+offset_bottom = 1.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1345357772]
+position = Vector2(63404, 54274)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1506014497]
+position = Vector2(-61838, -63692)
+shape = SubResource("CircleShape2D_vshru")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1588084836]
+position = Vector2(63404, 54274)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=766632540]
+position = Vector2(-55723, -52958)
+shape = SubResource("CircleShape2D_vshru")
+
+[connection signal="pressed" from="RadarSystem/Display/Button" to="RadarSystem" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="RadarSystem/Display/Scroll" to="RadarSystem" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RadarSystem/Display/Scroll" to="RadarSystem" method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dmlxo3blb34u8"]
+
+[ext_resource type="Script" uid="uid://de06i57o4ub1r" path="res://radar_dot.gd" id="1_cfdxd"]
+
+[node name="RadarDot" type="Node2D" unique_id=1144177443]
+script = ExtResource("1_cfdxd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1521432419]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+color = Color(1.7447397e-07, 0.38016427, 5.2943824e-07, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=541169106]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
