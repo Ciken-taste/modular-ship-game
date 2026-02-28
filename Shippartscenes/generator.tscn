@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dxukpnx81wtfa"]
+
+[ext_resource type="Texture2D" uid="uid://v1n1gxrmnvew" path="res://Sprites/shipparts/generator.png" id="1_yybav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86dc7"]
+size = Vector2(80, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iv2c"]
+size = Vector2(97, 98)
+
+[node name="Generator" type="StaticBody2D" unique_id=865506455]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124647033]
+texture = ExtResource("1_yybav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=694803671]
+shape = SubResource("RectangleShape2D_86dc7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=94469610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1369806862]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8iv2c")

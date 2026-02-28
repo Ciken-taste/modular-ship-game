@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bay6wuvf4cgsq"]
 
-[ext_resource type="Script" uid="uid://2nfg58sdmlie" path="res://radar_system.gd" id="1_y8x1c"]
+[ext_resource type="Script" uid="uid://2nfg58sdmlie" path="res://sensors/radar/radar_system.gd" id="1_yx4i7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8x1c"]
 radius = 29.068884
@@ -11,7 +11,7 @@ radius = 608.7627
 [node name="RadarTestScene" type="Node2D" unique_id=1853523109]
 
 [node name="RadarSystem" type="Node2D" parent="." unique_id=792900306]
-script = ExtResource("1_y8x1c")
+script = ExtResource("1_yx4i7")
 
 [node name="RadarDish" type="Node2D" parent="RadarSystem" unique_id=18469059]
 position = Vector2(841, 179)
@@ -63,10 +63,44 @@ offset_top = -114.0
 offset_right = 1.0
 offset_bottom = 1.0
 
-[node name="ColorRect2" type="ColorRect" parent="RadarSystem/Display/Sector" unique_id=507000462]
-offset_top = -1.0
-offset_right = 115.0
-offset_bottom = 1.0
+[node name="ColorRect2" type="ColorRect" parent="RadarSystem/Display/Sector" unique_id=1502992167]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 114.00113
+offset_bottom = 3.0
+rotation = -1.5707964
+
+[node name="AngleSlider" type="VSlider" parent="RadarSystem/Display" unique_id=786191895]
+offset_left = 203.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 120.0
+
+[node name="SpeedSlider" type="VSlider" parent="RadarSystem/Display" unique_id=696730877]
+offset_left = 168.0
+offset_top = 14.0
+offset_right = 184.0
+offset_bottom = 120.0
+min_value = 0.005
+max_value = 0.05
+step = 0.005
+value = 0.01
+
+[node name="Label" type="Label" parent="RadarSystem/Display" unique_id=131571414]
+offset_left = 151.00201
+offset_top = 105.000946
+offset_right = 200.00201
+offset_bottom = 128.00095
+rotation = -1.5708375
+text = "SPEED"
+
+[node name="Label2" type="Label" parent="RadarSystem/Display" unique_id=1850436901]
+offset_left = 186.0
+offset_top = 104.99997
+offset_right = 239.0
+offset_bottom = 127.99997
+rotation = -1.5708375
+text = "ANGLE"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1345357772]
 position = Vector2(63404, 54274)
@@ -87,3 +121,5 @@ shape = SubResource("CircleShape2D_vshru")
 [connection signal="pressed" from="RadarSystem/Display/Button" to="RadarSystem" method="_on_button_pressed"]
 [connection signal="mouse_entered" from="RadarSystem/Display/Scroll" to="RadarSystem" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="RadarSystem/Display/Scroll" to="RadarSystem" method="_on_area_2d_mouse_exited"]
+[connection signal="value_changed" from="RadarSystem/Display/AngleSlider" to="RadarSystem" method="_on_angle_slider_value_changed"]
+[connection signal="value_changed" from="RadarSystem/Display/SpeedSlider" to="RadarSystem" method="_on_speed_slider_value_changed"]

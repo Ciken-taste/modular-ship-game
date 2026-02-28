@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dja812assno3m"]
+
+[ext_resource type="Texture2D" uid="uid://bwf4otaitkgli" path="res://Sprites/shipparts/thruster.png" id="1_hnbbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86dc7"]
+size = Vector2(80, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iv2c"]
+size = Vector2(97, 98)
+
+[node name="Thruster" type="StaticBody2D" unique_id=1084605732]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747203759]
+texture = ExtResource("1_hnbbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=487612999]
+shape = SubResource("RectangleShape2D_86dc7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2078317930]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1144555036]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8iv2c")

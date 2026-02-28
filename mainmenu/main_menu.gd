@@ -3,6 +3,8 @@ extends Control
 @onready var new_game_menu := ($ChooseShip as Control)
 @onready var ship_selector := ($ChooseShip/OptionButton as OptionButton)
 
+@onready var vars = get_node("/root/global")
+
 func _ready() -> void:
 	get_saves()
 	get_ships()
@@ -63,5 +65,5 @@ func _on_close_new_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	ship_selector.get_item_text(ship_selector.selected)
+	vars.selected_ship = ship_selector.get_item_text(ship_selector.selected)
 	get_tree().change_scene_to_file("res://world.tscn")

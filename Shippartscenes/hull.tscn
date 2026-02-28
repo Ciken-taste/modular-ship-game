@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://onvrh6my5l0s"]
+
+[ext_resource type="Texture2D" uid="uid://dgwk34bhmqeov" path="res://Sprites/shipparts/hull.png" id="1_2qhhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86dc7"]
+size = Vector2(80, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iv2c"]
+size = Vector2(97, 98)
+
+[node name="Hull" type="StaticBody2D" unique_id=683853646]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=231155651]
+texture = ExtResource("1_2qhhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2103788524]
+shape = SubResource("RectangleShape2D_86dc7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1429163981]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=408989248]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8iv2c")

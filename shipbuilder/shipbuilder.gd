@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var pgeneration_label := ($Camera2D/PowerGeneration as Label)
 @onready var acceleration_label := ($Camera2D/MaxAcceleration as Label)

@@ -5,8 +5,15 @@
 [ext_resource type="Script" uid="uid://gcwh0ke7l05y" path="res://shipbuilder/camera_2d.gd" id="3_v710s"]
 [ext_resource type="Script" uid="uid://b8m4x0d8g8bb3" path="res://shipbuilder/savemenu.gd" id="4_x73uu"]
 
-[node name="Shipbuilder" type="Node2D" unique_id=760432318]
+[node name="Shipbuilder" type="Control" unique_id=28850609]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_spspl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Ghostblocks" type="Node" parent="." unique_id=1291956008]
 
@@ -16,78 +23,138 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_v710s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=840200900]
-position = Vector2(2408, 2567)
+position = Vector2(2499, 2496)
 script = ExtResource("3_v710s")
 
 [node name="Hull" type="Button" parent="Camera2D" unique_id=1308914914]
-offset_left = -547.0
-offset_top = 264.0
-offset_right = -497.0
-offset_bottom = 295.0
+anchors_preset = -1
+anchor_left = 0.019097222
+anchor_top = 0.89660496
+anchor_right = 0.0625
+anchor_bottom = 0.9444444
+offset_left = -554.0
+offset_top = 256.00006
+offset_right = -504.0
+offset_bottom = 287.00006
 text = "HULL"
+metadata/_edit_use_anchors_ = true
 
 [node name="Generator" type="Button" parent="Camera2D" unique_id=1433509448]
-offset_left = -464.0
-offset_top = 266.0
-offset_right = -361.0
-offset_bottom = 297.0
+anchors_preset = -1
+anchor_left = 0.091145836
+anchor_top = 0.89969134
+anchor_right = 0.18055555
+anchor_bottom = 0.94753087
+offset_left = -471.0
+offset_top = 258.00006
+offset_right = -368.0
+offset_bottom = 289.00006
 text = "GENERATOR"
+metadata/_edit_use_anchors_ = true
 
 [node name="Thruster" type="Button" parent="Camera2D" unique_id=97184763]
-offset_left = -329.0
-offset_top = 266.0
-offset_right = -254.0
-offset_bottom = 297.0
+anchors_preset = -1
+anchor_left = 0.20833333
+anchor_top = 0.89969134
+anchor_right = 0.2855903
+anchor_bottom = 0.94753087
+offset_left = -336.0
+offset_top = 258.00006
+offset_right = -247.0
+offset_bottom = 289.00006
 text = "THRUSTER"
+metadata/_edit_use_anchors_ = true
 
 [node name="Fueltank" type="Button" parent="Camera2D" unique_id=1882884458]
-offset_left = -197.0
-offset_top = 265.0
-offset_right = -108.0
-offset_bottom = 296.0
+anchors_preset = -1
+anchor_left = 0.32291666
+anchor_top = 0.8981481
+anchor_right = 0.4001736
+anchor_bottom = 0.94598764
+offset_left = -204.0
+offset_top = 257.00006
+offset_right = -115.0
+offset_bottom = 288.00006
 text = "FUELTANK"
+metadata/_edit_use_anchors_ = true
 
 [node name="PowerGeneration" type="Label" parent="Camera2D" unique_id=1368250137]
-offset_left = -563.0
-offset_top = -312.0
-offset_right = -380.0
-offset_bottom = -289.0
+anchors_preset = -1
+anchor_left = 0.0052083335
+anchor_top = 0.0077160494
+anchor_right = 0.19184028
+anchor_bottom = 0.043209877
+offset_left = -570.0
+offset_top = -320.0
+offset_right = -355.0
+offset_bottom = -297.0
 text = "POWER GENERATION: 0 MW"
+metadata/_edit_use_anchors_ = true
 
 [node name="MaxAcceleration" type="Label" parent="Camera2D" unique_id=1964076750]
-offset_left = -565.0
-offset_top = -280.0
-offset_right = -325.0
-offset_bottom = -257.0
+anchors_preset = -1
+anchor_left = 0.0034722222
+anchor_top = 0.057098765
+anchor_right = 0.21180555
+anchor_bottom = 0.09259259
+offset_left = -572.0
+offset_top = -288.0
+offset_right = -341.0
+offset_bottom = -265.0
 text = "MAX ACCELERATION: 0 M/S^2 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Range" type="Label" parent="Camera2D" unique_id=268592247]
-offset_left = -565.0
-offset_top = -194.0
-offset_right = -468.0
-offset_bottom = -171.0
+anchors_preset = -1
+anchor_left = 0.0034722222
+anchor_top = 0.18981482
+anchor_right = 0.08767361
+anchor_bottom = 0.22530864
+offset_left = -572.0
+offset_top = -202.0
+offset_right = -498.0
+offset_bottom = -179.0
 text = "DV: 0 M/S"
+metadata/_edit_use_anchors_ = true
 
 [node name="FuelCapacity" type="Label" parent="Camera2D" unique_id=1642546109]
-offset_left = -565.0
-offset_top = -252.0
-offset_right = -393.0
-offset_bottom = -229.0
+anchors_preset = -1
+anchor_left = 0.0034722222
+anchor_top = 0.10030864
+anchor_right = 0.15277778
+anchor_bottom = 0.13580246
+offset_left = -572.0
+offset_top = -260.0
+offset_right = -424.0
+offset_bottom = -237.0
 text = "FUEL CAPACITY: 0 L"
+metadata/_edit_use_anchors_ = true
 
 [node name="FuelConsumption" type="Label" parent="Camera2D" unique_id=1858091404]
-offset_left = -565.0
-offset_top = -162.0
-offset_right = -399.0
-offset_bottom = -139.0
+anchors_preset = -1
+anchor_left = 0.0034722222
+anchor_top = 0.23919754
+anchor_right = 0.14756945
+anchor_bottom = 0.27469134
+offset_left = -572.0
+offset_top = -169.99998
+offset_right = -406.0
+offset_bottom = -146.99998
 text = "CONSUMPTION: 0 L/S"
+metadata/_edit_use_anchors_ = true
 
 [node name="SaveButton" type="Button" parent="Camera2D" unique_id=1180525544]
-offset_left = 467.0
-offset_top = -307.0
-offset_right = 553.0
-offset_bottom = -276.0
+anchors_preset = -1
+anchor_left = 0.8993056
+anchor_top = 0.015432099
+anchor_right = 0.9739583
+anchor_bottom = 0.063271604
+offset_left = 460.0
+offset_top = -315.0
+offset_right = 546.0
+offset_bottom = -284.0
 text = "SAVE SHIP"
+metadata/_edit_use_anchors_ = true
 
 [node name="Savemenu" type="Control" parent="Camera2D/SaveButton" unique_id=1223766691]
 layout_mode = 1
@@ -103,6 +170,7 @@ layout_mode = 0
 offset_right = 341.0
 offset_bottom = 173.0
 color = Color(0, 0, 0, 0.3254902)
+metadata/_edit_use_anchors_ = true
 
 [node name="ConfirmSave" type="Button" parent="Camera2D/SaveButton/Savemenu" unique_id=211131652]
 layout_mode = 0
@@ -112,6 +180,7 @@ offset_right = 320.0
 offset_bottom = 164.0
 disabled = true
 text = "SAVE"
+metadata/_edit_use_anchors_ = true
 
 [node name="Cancelbutton" type="Button" parent="Camera2D/SaveButton/Savemenu" unique_id=424596169]
 layout_mode = 0
@@ -120,6 +189,7 @@ offset_top = 118.0
 offset_right = 126.0
 offset_bottom = 163.0
 text = "CANCEL"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D/SaveButton/Savemenu" unique_id=351018526]
 layout_mode = 0
@@ -128,6 +198,7 @@ offset_top = 44.0
 offset_right = 159.0
 offset_bottom = 67.0
 text = "Name your ship:"
+metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="Camera2D/SaveButton/Savemenu" unique_id=361333634]
 layout_mode = 0
@@ -136,21 +207,28 @@ offset_top = 43.0
 offset_right = 315.0
 offset_bottom = 74.0
 clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ExitButton" type="Button" parent="Camera2D" unique_id=1152062192]
-offset_left = 523.0
-offset_top = 286.0
-offset_right = 564.0
-offset_bottom = 317.0
+anchors_preset = -1
+anchor_left = 0.9479167
+anchor_top = 0.9305556
+anchor_right = 0.9835069
+anchor_bottom = 0.97839504
+offset_left = 516.0
+offset_top = 278.00006
+offset_right = 557.0
+offset_bottom = 309.00006
 text = "EXIT"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Camera2D/Hull" to="." method="_on_hull_pressed"]
 [connection signal="pressed" from="Camera2D/Generator" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Camera2D/Thruster" to="." method="_on_thruster_pressed"]
 [connection signal="pressed" from="Camera2D/Fueltank" to="." method="_on_fueltank_pressed"]
 [connection signal="pressed" from="Camera2D/SaveButton" to="Camera2D/SaveButton/Savemenu" method="_on_save_button_pressed"]
-[connection signal="pressed" from="Camera2D/SaveButton/Savemenu/ConfirmSave" to="." method="_on_confirm_save_pressed"]
 [connection signal="pressed" from="Camera2D/SaveButton/Savemenu/ConfirmSave" to="Camera2D/SaveButton/Savemenu" method="_on_confirm_save_pressed"]
+[connection signal="pressed" from="Camera2D/SaveButton/Savemenu/ConfirmSave" to="." method="_on_confirm_save_pressed"]
 [connection signal="pressed" from="Camera2D/SaveButton/Savemenu/Cancelbutton" to="Camera2D/SaveButton/Savemenu" method="_on_cancelbutton_pressed"]
 [connection signal="text_changed" from="Camera2D/SaveButton/Savemenu/LineEdit" to="Camera2D/SaveButton/Savemenu" method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Camera2D/ExitButton" to="." method="_on_exit_button_pressed"]

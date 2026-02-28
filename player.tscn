@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://m8lwaoenjae5"]
+
+[ext_resource type="Script" uid="uid://c3spf41kfqy83" path="res://player.gd" id="1_4flbx"]
+
+[node name="Player" type="Node2D" unique_id=1962606307]
+script = ExtResource("1_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=522730554]
+zoom = Vector2(0.415, 0.415)
+
+[node name="Hull" type="Node2D" parent="." unique_id=2094113755]

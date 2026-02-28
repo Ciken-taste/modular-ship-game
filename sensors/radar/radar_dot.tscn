@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmlxo3blb34u8"]
 
-[ext_resource type="Script" uid="uid://de06i57o4ub1r" path="res://radar_dot.gd" id="1_cfdxd"]
+[ext_resource type="Script" uid="uid://de06i57o4ub1r" path="res://sensors/radar/radar_dot.gd" id="1_cfdxd"]
 
 [node name="RadarDot" type="Node2D" unique_id=1144177443]
 script = ExtResource("1_cfdxd")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6tw7ik86bdfo"]
 
-[ext_resource type="Script" uid="uid://drp82x7fn5ccv" path="res://range_dot.gd" id="1_umkic"]
+[ext_resource type="Script" uid="uid://drp82x7fn5ccv" path="res://sensors/radar/range_dot.gd" id="1_umkic"]
 
 [node name="RangeDot" type="Node2D" unique_id=1144177443]
 script = ExtResource("1_umkic")
