@@ -2,10 +2,6 @@ extends Control
 
 @onready var confirm_save_button := ($ConfirmSave as Button)
 
-@onready var camera = get_parent().get_parent()
-
-func _physics_process(_delta: float) -> void:
-	pass
 
 func hidden(is_hidden : bool) -> void:
 	if is_hidden:
@@ -13,8 +9,7 @@ func hidden(is_hidden : bool) -> void:
 		position = Vector2.ZERO
 	else:
 		modulate.a = 1
-		global_position = camera.global_position
-
+		position = Vector2(-701.0, 186.0)
 
 func _on_save_button_pressed() -> void:
 	hidden(false)

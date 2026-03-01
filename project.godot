@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Spaceship"
-run/main_scene="uid://5atq6m51yiw2"
+run/main_scene="uid://6t0i2fbovu0o"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

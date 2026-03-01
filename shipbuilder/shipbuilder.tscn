@@ -26,153 +26,155 @@ texture = ExtResource("2_v710s")
 position = Vector2(2499, 2496)
 script = ExtResource("3_v710s")
 
-[node name="Hull" type="Button" parent="Camera2D" unique_id=1308914914]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1692955553]
+
+[node name="Hull" type="Button" parent="CanvasLayer" unique_id=1308914914]
 anchors_preset = -1
 anchor_left = 0.019097222
-anchor_top = 0.89660496
-anchor_right = 0.0625
+anchor_top = 0.9166667
+anchor_right = 0.037326388
 anchor_bottom = 0.9444444
-offset_left = -554.0
-offset_top = 256.00006
-offset_right = -504.0
-offset_bottom = 287.00006
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 53.0
+offset_bottom = 32.0
 text = "HULL"
 metadata/_edit_use_anchors_ = true
 
-[node name="Generator" type="Button" parent="Camera2D" unique_id=1433509448]
+[node name="Generator" type="Button" parent="CanvasLayer" unique_id=1433509448]
 anchors_preset = -1
 anchor_left = 0.091145836
-anchor_top = 0.89969134
-anchor_right = 0.18055555
+anchor_top = 0.9228395
+anchor_right = 0.091145836
 anchor_bottom = 0.94753087
-offset_left = -471.0
-offset_top = 258.00006
-offset_right = -368.0
-offset_bottom = 289.00006
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 106.0
+offset_bottom = 32.0
 text = "GENERATOR"
 metadata/_edit_use_anchors_ = true
 
-[node name="Thruster" type="Button" parent="Camera2D" unique_id=97184763]
+[node name="Thruster" type="Button" parent="CanvasLayer" unique_id=97184763]
 anchors_preset = -1
 anchor_left = 0.20833333
-anchor_top = 0.89969134
-anchor_right = 0.2855903
+anchor_top = 0.9259259
+anchor_right = 0.21527778
 anchor_bottom = 0.94753087
-offset_left = -336.0
-offset_top = 258.00006
-offset_right = -247.0
-offset_bottom = 289.00006
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 92.0
+offset_bottom = 32.0
 text = "THRUSTER"
 metadata/_edit_use_anchors_ = true
 
-[node name="Fueltank" type="Button" parent="Camera2D" unique_id=1882884458]
+[node name="Fueltank" type="Button" parent="CanvasLayer" unique_id=1882884458]
 anchors_preset = -1
 anchor_left = 0.32291666
-anchor_top = 0.8981481
-anchor_right = 0.4001736
+anchor_top = 0.92901236
+anchor_right = 0.33680555
 anchor_bottom = 0.94598764
-offset_left = -204.0
-offset_top = 257.00006
-offset_right = -115.0
-offset_bottom = 288.00006
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 92.0
+offset_bottom = 32.0
 text = "FUELTANK"
 metadata/_edit_use_anchors_ = true
 
-[node name="PowerGeneration" type="Label" parent="Camera2D" unique_id=1368250137]
+[node name="PowerGeneration" type="Label" parent="CanvasLayer" unique_id=1368250137]
 anchors_preset = -1
 anchor_left = 0.0052083335
 anchor_top = 0.0077160494
 anchor_right = 0.19184028
 anchor_bottom = 0.043209877
-offset_left = -570.0
-offset_top = -320.0
-offset_right = -355.0
-offset_bottom = -297.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 218.0
+offset_bottom = 24.0
 text = "POWER GENERATION: 0 MW"
 metadata/_edit_use_anchors_ = true
 
-[node name="MaxAcceleration" type="Label" parent="Camera2D" unique_id=1964076750]
+[node name="MaxAcceleration" type="Label" parent="CanvasLayer" unique_id=1964076750]
 anchors_preset = -1
 anchor_left = 0.0034722222
 anchor_top = 0.057098765
 anchor_right = 0.21180555
 anchor_bottom = 0.09259259
-offset_left = -572.0
-offset_top = -288.0
-offset_right = -341.0
-offset_bottom = -265.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 234.0
+offset_bottom = 24.000004
 text = "MAX ACCELERATION: 0 M/S^2 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Range" type="Label" parent="Camera2D" unique_id=268592247]
+[node name="Range" type="Label" parent="CanvasLayer" unique_id=268592247]
 anchors_preset = -1
 anchor_left = 0.0034722222
 anchor_top = 0.18981482
 anchor_right = 0.08767361
 anchor_bottom = 0.22530864
-offset_left = -572.0
-offset_top = -202.0
-offset_right = -498.0
-offset_bottom = -179.0
+offset_left = 3.0
+offset_top = 0.9999924
+offset_right = 77.0
+offset_bottom = 24.0
 text = "DV: 0 M/S"
 metadata/_edit_use_anchors_ = true
 
-[node name="FuelCapacity" type="Label" parent="Camera2D" unique_id=1642546109]
+[node name="FuelCapacity" type="Label" parent="CanvasLayer" unique_id=1642546109]
 anchors_preset = -1
 anchor_left = 0.0034722222
 anchor_top = 0.10030864
 anchor_right = 0.15277778
 anchor_bottom = 0.13580246
-offset_left = -572.0
-offset_top = -260.0
-offset_right = -424.0
-offset_bottom = -237.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 24.000008
 text = "FUEL CAPACITY: 0 L"
 metadata/_edit_use_anchors_ = true
 
-[node name="FuelConsumption" type="Label" parent="Camera2D" unique_id=1858091404]
+[node name="FuelConsumption" type="Label" parent="CanvasLayer" unique_id=1858091404]
 anchors_preset = -1
 anchor_left = 0.0034722222
 anchor_top = 0.23919754
 anchor_right = 0.14756945
 anchor_bottom = 0.27469134
-offset_left = -572.0
-offset_top = -169.99998
-offset_right = -406.0
-offset_bottom = -146.99998
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 169.0
+offset_bottom = 24.000015
 text = "CONSUMPTION: 0 L/S"
 metadata/_edit_use_anchors_ = true
 
-[node name="SaveButton" type="Button" parent="Camera2D" unique_id=1180525544]
+[node name="SaveButton" type="Button" parent="CanvasLayer" unique_id=1180525544]
 anchors_preset = -1
 anchor_left = 0.8993056
 anchor_top = 0.015432099
-anchor_right = 0.9739583
-anchor_bottom = 0.063271604
-offset_left = 460.0
-offset_top = -315.0
-offset_right = 546.0
-offset_bottom = -284.0
+anchor_right = 0.9175347
+anchor_bottom = 0.033950616
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 89.0
+offset_bottom = 32.0
 text = "SAVE SHIP"
 metadata/_edit_use_anchors_ = true
 
-[node name="Savemenu" type="Control" parent="Camera2D/SaveButton" unique_id=1223766691]
+[node name="Savemenu" type="Control" parent="CanvasLayer/SaveButton" unique_id=1223766691]
 layout_mode = 1
-anchor_left = -33.430233
-anchor_top = -72.90323
-anchor_right = -29.465117
-anchor_bottom = -67.29032
+anchor_left = -14.813084
+anchor_top = 3.4418604
+anchor_right = -10.847969
+anchor_bottom = 9.054767
 script = ExtResource("4_x73uu")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/SaveButton/Savemenu" unique_id=1403443030]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SaveButton/Savemenu" unique_id=1403443030]
 layout_mode = 0
 offset_right = 341.0
 offset_bottom = 173.0
 color = Color(0, 0, 0, 0.3254902)
 metadata/_edit_use_anchors_ = true
 
-[node name="ConfirmSave" type="Button" parent="Camera2D/SaveButton/Savemenu" unique_id=211131652]
+[node name="ConfirmSave" type="Button" parent="CanvasLayer/SaveButton/Savemenu" unique_id=211131652]
 layout_mode = 0
 offset_left = 216.0
 offset_top = 119.0
@@ -182,7 +184,7 @@ disabled = true
 text = "SAVE"
 metadata/_edit_use_anchors_ = true
 
-[node name="Cancelbutton" type="Button" parent="Camera2D/SaveButton/Savemenu" unique_id=424596169]
+[node name="Cancelbutton" type="Button" parent="CanvasLayer/SaveButton/Savemenu" unique_id=424596169]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 118.0
@@ -191,7 +193,7 @@ offset_bottom = 163.0
 text = "CANCEL"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Camera2D/SaveButton/Savemenu" unique_id=351018526]
+[node name="Label" type="Label" parent="CanvasLayer/SaveButton/Savemenu" unique_id=351018526]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 44.0
@@ -200,7 +202,7 @@ offset_bottom = 67.0
 text = "Name your ship:"
 metadata/_edit_use_anchors_ = true
 
-[node name="LineEdit" type="LineEdit" parent="Camera2D/SaveButton/Savemenu" unique_id=361333634]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/SaveButton/Savemenu" unique_id=361333634]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 43.0
@@ -209,26 +211,26 @@ offset_bottom = 74.0
 clear_button_enabled = true
 metadata/_edit_use_anchors_ = true
 
-[node name="ExitButton" type="Button" parent="Camera2D" unique_id=1152062192]
+[node name="ExitButton" type="Button" parent="CanvasLayer" unique_id=1152062192]
 anchors_preset = -1
 anchor_left = 0.9479167
 anchor_top = 0.9305556
-anchor_right = 0.9835069
-anchor_bottom = 0.97839504
-offset_left = 516.0
-offset_top = 278.00006
-offset_right = 557.0
-offset_bottom = 309.00006
+anchor_right = 0.9565972
+anchor_bottom = 0.94135803
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 32.0
 text = "EXIT"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Camera2D/Hull" to="." method="_on_hull_pressed"]
-[connection signal="pressed" from="Camera2D/Generator" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Camera2D/Thruster" to="." method="_on_thruster_pressed"]
-[connection signal="pressed" from="Camera2D/Fueltank" to="." method="_on_fueltank_pressed"]
-[connection signal="pressed" from="Camera2D/SaveButton" to="Camera2D/SaveButton/Savemenu" method="_on_save_button_pressed"]
-[connection signal="pressed" from="Camera2D/SaveButton/Savemenu/ConfirmSave" to="Camera2D/SaveButton/Savemenu" method="_on_confirm_save_pressed"]
-[connection signal="pressed" from="Camera2D/SaveButton/Savemenu/ConfirmSave" to="." method="_on_confirm_save_pressed"]
-[connection signal="pressed" from="Camera2D/SaveButton/Savemenu/Cancelbutton" to="Camera2D/SaveButton/Savemenu" method="_on_cancelbutton_pressed"]
-[connection signal="text_changed" from="Camera2D/SaveButton/Savemenu/LineEdit" to="Camera2D/SaveButton/Savemenu" method="_on_line_edit_text_changed"]
-[connection signal="pressed" from="Camera2D/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Hull" to="." method="_on_hull_pressed"]
+[connection signal="pressed" from="CanvasLayer/Generator" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Thruster" to="." method="_on_thruster_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fueltank" to="." method="_on_fueltank_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveButton" to="CanvasLayer/SaveButton/Savemenu" method="_on_save_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveButton/Savemenu/ConfirmSave" to="." method="_on_confirm_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveButton/Savemenu/ConfirmSave" to="CanvasLayer/SaveButton/Savemenu" method="_on_confirm_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveButton/Savemenu/Cancelbutton" to="CanvasLayer/SaveButton/Savemenu" method="_on_cancelbutton_pressed"]
+[connection signal="text_changed" from="CanvasLayer/SaveButton/Savemenu/LineEdit" to="CanvasLayer/SaveButton/Savemenu" method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,13 +1,13 @@
 extends Control
 
-@onready var pgeneration_label := ($Camera2D/PowerGeneration as Label)
-@onready var acceleration_label := ($Camera2D/MaxAcceleration as Label)
-@onready var dv_label := ($Camera2D/Range as Label)
-@onready var fuel_capacity_label := ($Camera2D/FuelCapacity as Label)
-@onready var fuel_consumption_label := ($Camera2D/FuelConsumption as Label)
+@onready var pgeneration_label := ($CanvasLayer/PowerGeneration as Label)
+@onready var acceleration_label := ($CanvasLayer/MaxAcceleration as Label)
+@onready var dv_label := ($CanvasLayer/Range as Label)
+@onready var fuel_capacity_label := ($CanvasLayer/FuelCapacity as Label)
+@onready var fuel_consumption_label := ($CanvasLayer/FuelConsumption as Label)
 
-@onready var save_button := ($Camera2D/SaveButton as Button)
-@onready var ship_name_input := ($Camera2D/SaveButton/Savemenu/LineEdit as LineEdit)
+@onready var save_button := ($CanvasLayer/SaveButton as Button)
+@onready var ship_name_input := ($CanvasLayer/SaveButton/Savemenu/LineEdit as LineEdit)
 
 
 @export var new_block_coords : Vector2 = Vector2.ZERO
@@ -48,14 +48,17 @@ func _ready() -> void:
 			ship[x].append("0")
 			y += 1
 		x += 1
-
+	
 	@warning_ignore("integer_division")
 	ship[ship_size/2][ship_size/2] = "cockpit"
+	get_ship_stats()
+
 
 func save_ship():
 	var save_file = FileAccess.open("user://ships/" + ship_name_input.text + ".save", FileAccess.WRITE)
 	var json_string = JSON.stringify({"ship": ship})
 	save_file.store_line(json_string)
+
 
 func update_labels() -> void:
 	pgeneration_label.text = "POWER GENERATION: " + str(power_generation) + "MW/" + str(power_demand) + "MW"
@@ -63,14 +66,14 @@ func update_labels() -> void:
 	dv_label.text = "DV: " + str(roundf(dv)) + " M/S"
 	fuel_capacity_label.text = "FUEL CAPACITY: " + str(fuel_capacity) + " L"
 	fuel_consumption_label.text = "CONSUMPTION: " + str(fuel_consumption) + " L/S"
-	
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == 2:
 			selected_block = "0"
 			draw_ghost_blocks()
-		   
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -83,11 +86,11 @@ func _physics_process(_delta: float) -> void:
 		add_child(new_block)
 		new_block_coords = Vector2.ZERO
 		draw_ghost_blocks()
-	
 	if remove_block_coords != Vector2.ZERO:
 		ship[remove_block_coords.x][remove_block_coords.y] = "0"
 		draw_ghost_blocks()
 		remove_block_coords = Vector2.ZERO
+
 
 func get_ship_stats():
 	var mass : float = 0
@@ -123,7 +126,9 @@ func get_ship_stats():
 			y += 1
 		x += 1
 	max_acceleration = force / mass
-	var fuel_time : float = fuel_capacity / fuel_consumption
+	var fuel_time : float = 0
+	if fuel_consumption != 0:
+		fuel_time = fuel_capacity / fuel_consumption
 	dv = max_acceleration * fuel_time
 	acceleration_label.self_modulate = Color(1, 1, 1)
 	fuel_capacity_label.self_modulate = Color(1, 1, 1)
@@ -173,15 +178,10 @@ func draw_ghost_blocks() -> void:
 						ghost_block.position = Vector2(x, y + a) * 50
 						ghost_block_tab.add_child(ghost_block)
 					a += 1
-					
-				
-			
 			y += 1
-		
 		x += 1
-		
-	
-	
+
+
 
 func _on_hull_pressed() -> void:
 	selected_block = "hull"
